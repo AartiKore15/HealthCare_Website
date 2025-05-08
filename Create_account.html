@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <a href="Login1.html"></a>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("header.jpg");
+  background-size:cover;
+  background-position:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  /* color: #fff; */
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  margin-top:30px;
+  margin-bottom: 30px;
+  padding: 80px;
+  border-radius: 8px;
+  width: 500px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display:flex;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.input-group select {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #218838;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <script>
+    
+    function validation() {
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const role = document.getElementById('role').value;
+      
+      if(password !== confirmPassword) {
+
+        alert('Passwords do not match');
+        return;
+        
+    }
+    else{
+      window.location.href = 'Login1.html';
+      alert('Account created successfully');
+    }
+    }
+  </script>
+  <div class="container">
+    <h2>Create Account</h2>
+    <form id="create-account-form">
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter a password">
+      </div>
+
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+      </div>
+
+      <div class="input-group">
+        <label for="role">Role</label>
+        
+        <select name="role" id="role" required placeholder="Select your role">
+          <option value="doctor">Doctor</option>
+          <option value="nurse">Nurse</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button  onclick="validation()" class="btn">Create Account</button>
+      <p class="login-link">Already have an account? <a href="Login1.html">Login here</a></p>
+
+    </form>
+  </div>
+  
+</body>
+</html>
